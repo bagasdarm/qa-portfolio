@@ -1087,7 +1087,7 @@
             </h2>
 
             <a href="#contact" class="btn btn:hover">
-              <span class="span">Hire Me Now</span>
+              <span class="span">Contact Me Now</span>
 
               <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
             </a>
@@ -1484,13 +1484,11 @@
                 </ul>
               </div>
               <!-- FORM KANAN -->
-              <div class="contact-card-dark">
-                <form
-                  name="contact"
-                  method="POST"
-                  data-netlify="true"
-                  class="contact-form"
-                >
+<div class="contact-card-dark">
+                <form name="contact" method="POST" data-netlify="true" action="/" class="contact-form">
+                  
+                  <input type="hidden" name="form-name" value="contact" />
+
                   <input
                     type="text"
                     name="name"
