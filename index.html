@@ -74,9 +74,9 @@
               <a href="#home" class="navbar-link" data-nav-link>Home</a>
             </li>
 
-            <li>
+            <!-- <li>
               <a href="#service" class="navbar-link" data-nav-link>Services</a>
-            </li>
+            </li> -->
 
             <li>
               <a href="#about" class="navbar-link" data-nav-link>About</a>
@@ -138,12 +138,8 @@
             </div>
 
             <div class="hero-content">
-              <h1 class="h1 title">
-                Hello, I'm Bagas Ari Darmawan.
-              </h1>
-              <h3 class="h3 title">
-                Welcome to my QA Engineer Portfolio.
-              </h3>
+              <h1 class="h1 title">Hello, I'm Bagas Ari Darmawan.</h1>
+              <h3 class="h3 title">Welcome to my QA Engineer Portfolio.</h3>
 
               <div class="wrapper">
                 <a
@@ -321,7 +317,7 @@
 
                       <li class="about-item">
                         <p class="list-title">Phone Number</p>
-                        <span class="span title h5">+62 877 8739 4855</span>
+                        <span class="span title h5">+62 *** **** ****</span>
                       </li>
 
                       <li class="about-item">
@@ -337,9 +333,15 @@
                       <li class="about-item">
                         <p class="list-title">Social Network</p>
 
+                        <!-- Menambahkan margin-top: 15px agar ada jarak yang pas dengan teks 'Social Network' -->
                         <div
                           class="social-list"
-                          style="display: flex; gap: 20px; flex-wrap: wrap"
+                          style="
+                            display: flex;
+                            gap: 20px;
+                            flex-wrap: wrap;
+                            margin-top: 15px;
+                          "
                         >
                           <a
                             href="https://instagram.com/bagasdarm"
@@ -438,9 +440,7 @@
                     <ul class="skill-list">
                       <li>
                         <div class="skill-wrapper">
-                          <span class="span"
-                            >Automation Testing (Katalon, Playwright)</span
-                          >
+                          <span class="span">Automation Testing</span>
 
                           <span class="value"></span>
                         </div>
@@ -452,7 +452,7 @@
 
                       <li>
                         <div class="skill-wrapper">
-                          <span class="span">API Testing (Postman)</span>
+                          <span class="span">API Testing</span>
 
                           <span class="value"></span>
                         </div>
@@ -703,6 +703,23 @@
                 <ul class="tools-grid">
                   <li class="tool-item">
                     <img
+                      src="https://raw.githubusercontent.com/bagasdarm/bagasdarm/104927c1b303f9b3804a4ff6a3c4fc195bad02a4/Katalon.svg"
+                      alt="Katalon Studio"
+                      class="tool-icon"
+                      style="border-radius: 8px"
+                    />
+                    <span class="title h6 tool-name">Katalon Studio</span>
+                  </li>
+                  <li class="tool-item">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/playwright/playwright-original.svg"
+                      alt="Playwright"
+                      class="tool-icon"
+                    />
+                    <span class="title h6 tool-name">Playwright</span>
+                  </li>
+                  <li class="tool-item">
+                    <img
                       src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
                       alt="JavaScript"
                       class="tool-icon"
@@ -733,63 +750,21 @@
                     />
                     <span class="title h6 tool-name">VS Code</span>
                   </li>
-                  <li class="tool-item">
-                    <img
-                      src="https://raw.githubusercontent.com/bagasdarm/bagasdarm/104927c1b303f9b3804a4ff6a3c4fc195bad02a4/Katalon.svg"
-                      alt="Katalon Studio"
-                      class="tool-icon"
-                      style="border-radius: 8px"
-                    />
-                    <span class="title h6 tool-name">Katalon Studio</span>
-                  </li>
-                  <li class="tool-item">
-                    <img
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/playwright/playwright-original.svg"
-                      alt="Playwright"
-                      class="tool-icon"
-                    />
-                    <span class="title h6 tool-name">Playwright</span>
-                  </li>
-                  <li class="tool-item">
-                    <img
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg"
-                      alt="Postman"
-                      class="tool-icon"
-                    />
-                    <span class="title h6 tool-name">Postman</span>
-                  </li>
-                  <li class="tool-item">
-                    <img
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
-                      alt="Git"
-                      class="tool-icon"
-                    />
-                    <span class="title h6 tool-name">Git</span>
-                  </li>
-                  <li class="tool-item">
-                    <img
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
-                      alt="GitHub"
-                      class="tool-icon"
-                      style="background-color: white; border-radius: 50%"
-                    />
-                    <span class="title h6 tool-name">GitHub</span>
-                  </li>
                 </ul>
               </div>
 
-              <div class="tab-content" data-tab-content="experience">
+<div class="tab-content" data-tab-content="experience">
                 <style>
                   .timeline-container {
                     padding: 30px 10px;
                   }
                   .timeline-list {
                     position: relative;
-                    padding-left: 50px; /* Diperlebar sedikit agar tidak terlalu mepet dengan garis */
+                    padding-left: 50px; /* Jarak lega ke garis timeline */
                     list-style: none;
                     margin: 0;
                   }
-                  /* Garis vertikal timeline disesuaikan dengan tema gelap */
+                  /* Garis vertikal timeline */
                   .timeline-list::before {
                     content: "";
                     position: absolute;
@@ -797,17 +772,12 @@
                     bottom: 0;
                     left: 8px;
                     width: 2px;
-                    background-color: rgba(
-                      255,
-                      255,
-                      255,
-                      0.15
-                    ); /* Garis sedikit lebih terang */
+                    background-color: rgba(255, 255, 255, 0.15);
                     border-radius: 5px;
                   }
                   .timeline-item {
                     position: relative;
-                    margin-bottom: 50px;
+                    margin-bottom: 50px; /* Jarak antar kartu sangat lega */
                   }
                   .timeline-item:last-child {
                     margin-bottom: 0;
@@ -820,75 +790,72 @@
                     width: 18px;
                     height: 18px;
                     border-radius: 50%;
-                    background-color: var(--main-color, #3b82f6);
+                    background-color: #3b82f6;
                     border: 4px solid #1a1a1a;
                     box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.05);
-                    transition:
-                      background-color 0.3s ease,
-                      transform 0.3s ease;
+                    transition: background-color 0.3s ease, transform 0.3s ease;
                   }
                   .timeline-item:hover .timeline-dot {
                     background-color: #60a5fa;
                     transform: scale(1.2);
                   }
-                  /* Kartu Mode Gelap (Dark Theme) */
+                  /* Kartu dengan padding besar agar tidak sempit */
                   .timeline-card {
                     background: rgba(255, 255, 255, 0.04);
                     backdrop-filter: blur(10px);
                     -webkit-backdrop-filter: blur(10px);
                     border: 1px solid rgba(255, 255, 255, 0.1);
                     border-radius: 16px;
-                    padding: 40px; /* Padding diperbesar agar elemen bernapas */
-                    transition:
-                      transform 0.3s ease,
-                      box-shadow 0.3s ease,
-                      border-color 0.3s ease;
+                    padding: 40px; /* Padding besar persis seperti yang direquest */
+                    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
                   }
                   .timeline-card:hover {
                     transform: translateY(-5px);
                     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
                     border-color: rgba(255, 255, 255, 0.25);
                   }
-                  /* Header Kartu */
+                  
+                  /* Typografi persis dengan bagian Skills */
                   .timeline-header {
                     margin-bottom: 25px;
                     padding-bottom: 20px;
                     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
                   }
                   .timeline-date {
-                    font-size: 1.1rem; /* Diperbesar */
+                    font-size: 1.15rem; /* Ukuran besar */
                     color: #60a5fa;
-                    font-weight: 600; /* Dibuat lebih tebal */
+                    font-weight: 600;
                     margin-bottom: 12px;
                     display: block;
                     letter-spacing: 1px;
                     text-transform: uppercase;
                   }
                   .timeline-title {
-                    font-size: 1.8rem; /* Judul diperbesar signifikan */
+                    font-size: 1.8rem; /* Sama persis dengan judul Skillset (1.8rem) */
                     font-weight: 700;
                     color: #ffffff;
                     line-height: 1.4;
                     margin-bottom: 10px;
                   }
                   .timeline-company {
-                    font-size: 1.25rem; /* Ukuran perusahaan diperbesar */
-                    color: #e5e7eb; /* Diterangkan */
-                    font-weight: 500;
+                    font-size: 1.25rem;
+                    color: #e5e7eb;
+                    font-weight: 600;
                     margin-bottom: 15px;
                   }
                   .timeline-meta {
-                    font-size: 1.05rem; /* Diperbesar */
-                    color: #d1d5db; /* Diterangkan */
+                    font-size: 1.05rem;
+                    color: #9ca3af;
                     display: flex;
                     flex-wrap: wrap;
                     gap: 15px;
-                    font-weight: 400;
+                    font-weight: 500;
                   }
-                  /* Teks Utama & List Tanggung Jawab */
+                  
+                  /* Teks paragraf dan list persis dengan .section-text di Skills */
                   .timeline-text {
-                    font-size: 1.15rem; /* Ukuran teks deskripsi diperbesar */
-                    color: #d1d5db; /* Abu-abu lebih terang */
+                    font-size: 1.15rem; /* Sama persis dengan deskripsi skillset */
+                    color: #d1d5db;
                     line-height: 1.8;
                     margin-bottom: 25px;
                   }
@@ -898,10 +865,10 @@
                     margin: 0;
                   }
                   .timeline-responsibilities li {
-                    font-size: 1.15rem; /* Ukuran list diperbesar */
-                    color: #d1d5db; /* Diterangkan */
+                    font-size: 1.15rem; /* Sama persis dengan deskripsi skillset */
+                    color: #d1d5db;
                     line-height: 1.8;
-                    margin-bottom: 12px; /* Jarak antar list diperlebar */
+                    margin-bottom: 12px;
                   }
                   .timeline-responsibilities li::marker {
                     color: #60a5fa;
@@ -914,63 +881,30 @@
                       <div class="timeline-dot"></div>
                       <div class="timeline-card">
                         <div class="timeline-header">
-                          <span class="timeline-date"
-                            >Nov 2025 - May 2026 (6 Months)</span
-                          >
-                          <h3 class="timeline-title">
-                            QA Tester Engineer Intern
-                          </h3>
+                          <span class="timeline-date">Nov 2025 - May 2026 (6 Months)</span>
+                          <h3 class="timeline-title">QA Tester Engineer Intern</h3>
                           <h4 class="timeline-company">
-                            PT Ragdalion Revolusi Industri (MagangHub Kemnaker
-                            2025 Batch II)
+                            PT Ragdalion Revolusi Industri (MagangHub Kemnaker 2025 Batch II)
                           </h4>
                           <div class="timeline-meta">
-                            <span>Internship</span>
+                            <span>Apprenticeship</span>
                             <span>|</span>
-                            <span
-                              >Kecamatan Cikarang Selatan, West Java
-                              (On-site)</span
-                            >
+                            <span>Kecamatan Cikarang Selatan, West Java (On-site)</span>
                           </div>
                         </div>
 
                         <p class="timeline-text">
-                          Software QA with hands-on experience in manual and
-                          automation testing for web applications, ensuring
-                          product quality, stability, and release readiness
-                          across the SDLC.
+                          Software QA with hands-on experience in manual and automation testing for web applications, ensuring product quality, stability, and release readiness across the SDLC.
                         </p>
 
-                        <strong
-                          style="
-                            font-size: 1.2rem; /* Diperbesar */
-                            color: #ffffff; /* Dibuat putih bersih agar menonjol */
-                            display: block;
-                            margin-bottom: 15px;
-                            font-weight: 600;
-                          "
-                          >Key Responsibilities:</strong
-                        >
+                        <strong style="font-size: 1.2rem; color: #ffffff; display: block; margin-bottom: 15px; font-weight: 600;">
+                          Key Responsibilities:
+                        </strong>
                         <ul class="timeline-responsibilities">
-                          <li>
-                            Designed and executed comprehensive test cases
-                            (manual & automated) based on requirements and
-                            acceptance criteria.
-                          </li>
-                          <li>
-                            Developed and maintained automation scripts using
-                            Katalon Studio to improve regression efficiency and
-                            test coverage.
-                          </li>
-                          <li>
-                            Performed functional and regression testing prior to
-                            release to ensure system reliability.
-                          </li>
-                          <li>
-                            Identified, documented, and validated defects in
-                            close collaboration with Developers and Business
-                            Analysts.
-                          </li>
+                          <li>Designed and executed comprehensive test cases (manual & automated) based on requirements and acceptance criteria.</li>
+                          <li>Developed and maintained automation scripts using Katalon Studio to improve regression efficiency and test coverage.</li>
+                          <li>Performed functional and regression testing prior to release to ensure system reliability.</li>
+                          <li>Identified, documented, and validated defects in close collaboration with Developers and Business Analysts.</li>
                         </ul>
                       </div>
                     </li>
@@ -979,60 +913,30 @@
                       <div class="timeline-dot"></div>
                       <div class="timeline-card">
                         <div class="timeline-header">
-                          <span class="timeline-date"
-                            >Oct 2024 - Apr 2025 (6 Months)</span
-                          >
-                          <h3 class="timeline-title">
-                            QA Manual Tester Intern
-                          </h3>
+                          <span class="timeline-date">Oct 2024 - Apr 2025 (6 Months)</span>
+                          <h3 class="timeline-title">QA Manual Tester Intern</h3>
                           <h4 class="timeline-company">
                             PT Guitekno Tresna Telekomunikasi - Lahtube
                           </h4>
                           <div class="timeline-meta">
-                            <span>Internship</span>
+                            <span>Apprenticeship</span>
                             <span>|</span>
                             <span>Tebet, Jakarta, Indonesia (Hybrid)</span>
                           </div>
                         </div>
 
                         <p class="timeline-text">
-                          As a QA Manual Tester, I was responsible for ensuring
-                          software quality through structured manual testing
-                          processes across web-based applications.
+                          As a QA Manual Tester, I was responsible for ensuring software quality through structured manual testing processes across web-based applications.
                         </p>
 
-                        <strong
-                          style="
-                            font-size: 1.2rem; /* Diperbesar */
-                            color: #ffffff; /* Dibuat putih bersih agar menonjol */
-                            display: block;
-                            margin-bottom: 15px;
-                            font-weight: 600;
-                          "
-                          >Key Responsibilities:</strong
-                        >
+                        <strong style="font-size: 1.2rem; color: #ffffff; display: block; margin-bottom: 15px; font-weight: 600;">
+                          Key Responsibilities:
+                        </strong>
                         <ul class="timeline-responsibilities">
-                          <li>
-                            Designed and executed test scenarios and test cases
-                            based on business and functional requirements,
-                            covering functional, regression, integration, and
-                            UAT testing.
-                          </li>
-                          <li>
-                            Identified, documented, and tracked defects with
-                            clear reproduction steps; validated fixes in
-                            collaboration with developers within an Agile/Scrum
-                            environment.
-                          </li>
-                          <li>
-                            Performed API testing using Postman and basic
-                            database validation with SQL to ensure data accuracy
-                            and system reliability.
-                          </li>
-                          <li>
-                            Conducted cross-browser and responsive testing to
-                            maintain UI/UX consistency across web applications.
-                          </li>
+                          <li>Designed and executed test scenarios and test cases based on business and functional requirements, covering functional, regression, integration, and UAT testing.</li>
+                          <li>Identified, documented, and tracked defects with clear reproduction steps; validated fixes in collaboration with developers within an Agile/Scrum environment.</li>
+                          <li>Performed API testing using Postman and basic database validation with SQL to ensure data accuracy and system reliability.</li>
+                          <li>Conducted cross-browser and responsive testing to maintain UI/UX consistency across web applications.</li>
                         </ul>
                       </div>
                     </li>
@@ -1314,114 +1218,209 @@
           </div>
         </section>
 
-        <section class="section contact" aria-label="contact me" id="contact">
+<section class="section contact" aria-label="contact me" id="contact">
           <div class="container">
-            <h2 class="title h2 section-title">Get In Touch</h2>
+            <style>
+              .contact-modern-layout {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+                margin-top: 40px;
+                align-items: flex-start;
+              }
+              
+              /* Responsif untuk layar HP */
+              @media (max-width: 768px) {
+                .contact-modern-layout {
+                  grid-template-columns: 1fr;
+                }
+              }
 
-            <div class="contact-content">
-              <form action="./index.html" method="post" class="contact-form">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Full name"
-                  autocomplete="off"
-                  required
-                  class="input-field"
-                />
+              /* Desain Kartu Kaca (Glassmorphism) untuk Form dan Info */
+              .contact-card-dark {
+                background: rgba(255, 255, 255, 0.03);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                border-radius: 16px;
+                padding: 40px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+              }
 
-                <input
-                  type="email"
-                  name="email_address"
-                  placeholder="Email address"
-                  autocomplete="off"
-                  required
-                  class="input-field"
-                />
+              /* Styling Form Input Mode Gelap */
+              .contact-form {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+              }
+              .input-field {
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                color: #ffffff;
+                padding: 16px 20px;
+                border-radius: 10px;
+                font-size: 1.05rem;
+                outline: none;
+                transition: border-color 0.3s ease, background 0.3s ease;
+                width: 100%;
+              }
+              .input-field::placeholder {
+                color: #9ca3af;
+              }
+              .input-field:focus {
+                border-color: #3b82f6; /* Warna biru saat diklik */
+                background: rgba(255, 255, 255, 0.08);
+              }
+              textarea.input-field {
+                min-height: 160px;
+                resize: vertical;
+                font-family: inherit;
+              }
+              .form-submit-btn {
+                margin-top: 10px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+              }
 
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="Phone"
-                  autocomplete="off"
-                  class="input-field"
-                />
+              /* Styling Info Kontak */
+              .contact-info-text {
+                font-size: 1.15rem;
+                color: #d1d5db;
+                line-height: 1.7;
+                margin-bottom: 30px;
+              }
+              .contact-list {
+                display: flex;
+                flex-direction: column;
+                gap: 25px;
+              }
+              .contact-item {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+              }
+              .item-icon {
+                background: rgba(59, 130, 246, 0.1); /* Latar biru super transparan untuk ikon */
+                padding: 15px;
+                border-radius: 12px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid rgba(59, 130, 246, 0.2);
+              }
+              .item-icon img {
+                width: 35px;
+                height: 35px;
+                object-fit: contain;
+              }
+              .contact-item-title {
+                display: block;
+                font-size: 0.95rem;
+                color: #9ca3af;
+                margin-bottom: 5px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+              }
+              .contact-item-value {
+                font-size: 1.2rem;
+                color: #ffffff;
+                font-weight: 500;
+                word-break: break-word;
+              }
+            </style>
 
-                <textarea
-                  name="message"
-                  placeholder="Enter message"
-                  required
-                  class="input-field"
-                ></textarea>
+            <h2 class="title h2 section-title text-center">Get In Touch</h2>
+            <p class="section-text text-center" style="color: #9ca3af; font-size: 1.15rem; max-width: 600px; margin: 0 auto;">
+              Have a question or want to work together? Leave a message below or reach out via my contact details.
+            </p>
 
-                <button type="submit" class="btn btn:hover">
-                  <span class="span">Send Message</span>
+            <div class="contact-modern-layout">
+              
+              <!-- KOLOM KIRI: INFO KONTAK -->
+              <div class="contact-card-dark">
+                <p class="contact-info-text">
+                  I'm currently looking for new opportunities and collaborations. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+                </p>
 
-                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                </button>
-              </form>
+                <ul class="contact-list">
+                  <li class="contact-item">
+                    <div class="item-icon">
+                      <img src="./assets/images/contact-icon-3.png" loading="lazy" alt="Email Icon" />
+                    </div>
+                    <div>
+                      <span class="contact-item-title">Email</span>
+                      <span class="contact-item-value">bagasaridarmawang@gmail.com</span>
+                    </div>
+                  </li>
 
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d898.4329239267093!2d-73.91493787358391!3d40.76299026683699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1671529019371!5m2!1sen!2sbd"
-                width="600"
-                height="450"
-                style="border: 0"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                class="map"
-              ></iframe>
+                  <li class="contact-item">
+                    <div class="item-icon">
+                      <img src="./assets/images/contact-icon-1.png" loading="lazy" alt="Phone Icon" />
+                    </div>
+                    <div>
+                      <span class="contact-item-title">Phone / Whatsapp Only (Currently Inactive, Email Only)</span>
+                      <span class="contact-item-value">+62 *** **** ****</span>
+                    </div>
+                  </li>
 
-              <ul class="contact-list">
-                <li class="contact-item">
-                  <div class="item-icon">
-                    <img
-                      src="./assets/images/contact-icon-1.png"
-                      width="50"
-                      height="50"
-                      loading="lazy"
-                      alt="contact icon"
-                    />
-                  </div>
+                  <li class="contact-item">
+                    <div class="item-icon">
+                      <img src="./assets/images/contact-icon-2.png" loading="lazy" alt="Location Icon" />
+                    </div>
+                    <div>
+                      <span class="contact-item-title">Location</span>
+                      <address class="contact-item-value" style="font-style: normal;">
+                        Kota Bekasi, Jawa Barat
+                      </address>
+                    </div>
+                  </li>
+                </ul>
+              </div>
 
-                  <div>
-                    <span class="title h6">+62 877 8739 4855</span>
-                  </div>
-                </li>
+              <!-- KOLOM KANAN: FORMULIR -->
+              <div class="contact-card-dark">
+                <form action="./index.html" method="post" class="contact-form">
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Full Name"
+                    autocomplete="off"
+                    required
+                    class="input-field"
+                  />
 
-                <li class="contact-item">
-                  <div class="item-icon">
-                    <img
-                      src="./assets/images/contact-icon-2.png"
-                      width="50"
-                      height="50"
-                      loading="lazy"
-                      alt="contact icon"
-                    />
-                  </div>
+                  <input
+                    type="email"
+                    name="email_address"
+                    placeholder="Your Email Address"
+                    autocomplete="off"
+                    required
+                    class="input-field"
+                  />
 
-                  <div>
-                    <address class="title h6">
-                      Kota Bekasi, Jawa Barat, Indonesia
-                    </address>
-                  </div>
-                </li>
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Your Phone Number (Optional)"
+                    autocomplete="off"
+                    class="input-field"
+                  />
 
-                <li class="contact-item">
-                  <div class="item-icon">
-                    <img
-                      src="./assets/images/contact-icon-3.png"
-                      width="50"
-                      height="50"
-                      loading="lazy"
-                      alt="contact icon"
-                    />
-                  </div>
+                  <textarea
+                    name="message"
+                    placeholder="Write your message here..."
+                    required
+                    class="input-field"
+                  ></textarea>
 
-                  <div>
-                    <span class="title h6">bagasaridarmawang@gmail.com</span>
-                  </div>
-                </li>
-              </ul>
+                  <button type="submit" class="btn btn:hover form-submit-btn">
+                    <span class="span">Send Message</span>
+                    <ion-icon name="send-outline" aria-hidden="true"></ion-icon>
+                  </button>
+                </form>
+              </div>
+
             </div>
           </div>
         </section>
@@ -1430,7 +1429,7 @@
 
     <footer class="footer">
       <div class="container">
-        <p class="copyright">Copyright & Design By Bagas Ari Darmawan - 2026</p>
+        <p class="copyright">Bagas Ari Darmawan | 2026</p>
 
         <a href="#top" class="back-top-btn">
           <span class="span">Back To Top</span>
