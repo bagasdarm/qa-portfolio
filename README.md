@@ -1,54 +1,36 @@
-<div align="center">
-  
-  ![GitHub repo size](https://img.shields.io/github/repo-size/codewithsadee/drew-hays-personal-portfolio)
-  ![GitHub stars](https://img.shields.io/github/stars/codewithsadee/drew-hays-personal-portfolio?style=social)
-  ![GitHub forks](https://img.shields.io/github/forks/codewithsadee/drew-hays-personal-portfolio?style=social)
-[![Twitter Follow](https://img.shields.io/twitter/follow/codewithsadee_?style=social)](https://twitter.com/intent/follow?screen_name=codewithsadee_)
-  [![YouTube Video Views](https://img.shields.io/youtube/views/lzledoZLFBQ?style=social)](https://youtu.be/lzledoZLFBQ)
+# Bagas Ari Darmawan - Personal Portfolio
 
-  <br />
-  <br />
+A personal portfolio website built to showcase my professional journey, skills, and projects as a **Software Quality Assurance (SQA) Engineer**. 
 
-  <h2 align="center">Drew hays - Personal Portfolio Website</h2>
+This repository contains the source code for the portfolio, which highlights my expertise in developing automation scripts, validating APIs, and performing comprehensive manual and UI testing to ensure software stability and quality.
 
-  Drew hays is a fully responsive personal portfolio website, <br />Responsive for all devices, build using HTML, CSS, and JavaScript.
+## Features & Services Highlighted
 
-  <a href="https://codewithsadee.github.io/drew-hays-personal-portfolio/"><strong>➥ Live Demo</strong></a>
+This portfolio is divided into several sections that reflect my core competencies in the QA domain:
 
-</div>
+* **Automation Testing:** Showcasing frameworks and scripts built to accelerate software testing cycles and ensure feature stability.
+* **API Testing:** Highlighting experience in validating endpoints, data flow, security, and response accuracy.
+* **Manual Testing:** Demonstrating deep-dive exploration techniques to uncover functional defects and business logic flaws.
+* **UI Testing:** Ensuring user interfaces function flawlessly and adhere to design standards.
 
-<br />
+## Tech Stack & Tools
 
-### Demo Screeshots
+**Website Development Stack:**
+* HTML5
+* CSS3 (Custom Styling & Responsive Design)
+* JavaScript
+* Deployed via Netlify
 
-![Drew hays Desktop Demo](./readme-images/desktop.png "Desktop Demo")
+**Testing Tools Highlighted (Skills Section):**
+* **Manual & Management:** TestRail, Redmine, Trello, Jira, Notion.
+* **Automation Testing:** Katalon Studio, Playwright, Selenium, Cypress.
+* **API & Database Testing:** Postman, DBeaver, PostgreSQL.
+* **Scripting & Version Control:** Node.js, VS Code, Git, GitHub.
 
-### Prerequisites
+## Local Installation
 
-Before you begin, ensure you have met the following requirements:
+If you wish to run this portfolio locally on your machine, follow these steps:
 
-* [Git](https://git-scm.com/downloads "Download Git") must be installed on your operating system.
-
-### Run Locally
-
-To run **Drew hays** locally, run this command on your git bash:
-
-Linux and macOS:
-
-```bash
-sudo git clone https://github.com/codewithsadee/drew-hays-personal-portfolio.git
-```
-
-Windows:
-
-```bash
-git clone https://github.com/codewithsadee/drew-hays-personal-portfolio.git
-```
-
-### Contact
-
-If you want to contact with me you can reach me at [Twitter](https://www.twitter.com/codewithsadee).
-
-### License
-
-[MIT](https://choosealicense.com/licenses/mit/)
+1. Clone the repository:
+   ```bash
+   git clone [https://github.com/bagasdarm/your-repo-name.git](https://github.com/bagasdarm/your-repo-name.git)
