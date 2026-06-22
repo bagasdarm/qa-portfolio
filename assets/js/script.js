@@ -145,100 +145,81 @@ addEventOnElements(hoveredElements, "mouseout", function () {
 
 /**
  * ==========================================
- * PROJECT MODAL & DYNAMIC CONTENT LOGIC
+ * DYNAMIC PROJECTS FROM JSON & SLIDER LOGIC
  * ==========================================
  */
+let projectsData = {}; // Akan menyimpan data untuk modal
+const projectSlider = document.getElementById("projectSlider");
 
-const projectsData = {
-  "1": {
-    title: "Learning Management System (LMS)",
-    category: "QA (Manual & Automation)",
-    image: "./assets/images/projects.jpg",
-    description: "Managed end-to-end testing for the PT Ragdalion Revolusi Industri internship project by designing test cases from scratch, executing manual testing, and building automation testing scripts using Katalon Studio. Updated test cases in parallel with feature updates, tracked bugs via Google Sheets, and monitored real-time push deployment status to Dev/Staging environments via Discord bot integration to expedite technical collaboration with Developers.",
-    buttons: [
-      { label: "View Test Cases", url: "#", icon: "document-text-outline" }
-    ]
-  },
-  "2": {
-    title: "Budget Management System (BMS)",
-    category: "QA (Manual & Automation)",
-    image: "./assets/images/projects.jpg",
-    description: "Performed QA and integration testing on a PT Ragdalion Revolusi Industri project by optimizing 80% of legacy test cases. Executed manual and automation testing via Katalon Studio to validate core functionality and ensure the accuracy of data exchange between the internal BMS and the client's Odoo platform.",
-    buttons: [
-      { label: "View Scripts", url: "#", icon: "code-slash-outline" }
-    ]
-  },
-  "3": {
-    title: "Financial Order Management (FOM)",
-    category: "Functional & Integration Testing",
-    image: "./assets/images/projects.jpg",
-    description: "Executed functional and integration testing for a PT Ragdalion Revolusi Industri project using both manual and automated testing approaches (Katalon Studio). Validated the main transaction flow connecting the QOM and ARP modules, ensuring accurate and non-redundant data transmission between FOM and the client's Odoo platform.",
-    buttons: [
-      { label: "Project Details", url: "#", icon: "information-circle-outline" }
-    ]
-  },
-  "4": {
-    title: "HRIS System (Web & Mobile)",
-    category: "Cross-Platform Manual Testing",
-    image: "./assets/images/projects.jpg",
-    description: "Conducted intensive cross-platform manual testing on PT Ragdalion Revolusi Industri's integrated HRIS ecosystem. Validated end-to-end business flow synchronization, ensuring requests from the Mobile application (e.g., Maternity Leave and Overtime) synchronized perfectly with the approval processes on the Web dashboard.",
-    buttons: [
-      { label: "Bug Reports", url: "#", icon: "bug-outline" }
-    ]
-  },
-  "5": {
-    title: "Manufacturing Maintenance System",
-    category: "Functional Testing",
-    image: "./assets/images/projects.jpg",
-    description: "Executed cross-platform functional testing on a template manufacturing application during the internship at PT Ragdalion Revolusi Industri. Ensured the stability of the three main feature pillars (Checklist, Corrective, Preventive Maintenance) and validated customization alignment with client requirements.",
-    buttons: [
-      { label: "Testing Documentation", url: "#", icon: "folder-open-outline" }
-    ]
-  },
-  "6": {
-    title: "Customer Service Chatbot Web Application",
-    category: "Development & QA",
-    image: "./assets/images/projects.jpg",
-    description: "Designed, built, and tested a chatbot application as a personal thesis project. Developed the front-end using React Vite, designed the user interface (UI) via Figma, and implemented the back-end using Node.js to handle user authentication and CRUD operations. Conducted comprehensive functional and usability testing to ensure a user-friendly system and optimal user experience.",
-    buttons: [
-      { label: "GitHub Repo", url: "#", icon: "logo-github" },
-      { label: "Figma Design", url: "#", icon: "color-palette-outline" }
-    ]
-  },
-  "7": {
-    title: "Online Grocery E-Commerce Web Application",
-    category: "Functional Manual Testing",
-    image: "./assets/images/projects.jpg",
-    description: "Served as QA Tester in a 5-member development team for a university Web Programming academic project. Managed the planning and execution of functional manual testing on the e-commerce platform to validate business flow compliance. Documented all bug findings using Google Sheets to ensure application quality and support timely project completion.",
-    buttons: [
-      { label: "Bug Reports Sheet", url: "#", icon: "document-text-outline" }
-    ]
-  },
-  "8": {
-    title: "E-Wallet Application - UI/UX Research & Design",
-    category: "UI/UX Research & Design",
-    image: "./assets/images/projects.jpg",
-    description: "Conducted user needs research, literature review, and UI/UX design for an e-wallet application as part of a university academic project. Collaborated within a team to design an intuitive UI using Figma and executed usability testing to validate system flow convenience and optimize user experience.",
-    buttons: [
-      { label: "View Figma Prototype", url: "#", icon: "logo-figma" }
-    ]
-  },
-  "9": {
-    title: "Lovebird Disease Diagnosis Expert System",
-    category: "Manual UI Testing",
-    image: "./assets/images/projects.jpg",
-    description: "Collaborated in a team to develop and test an Expert System for a university academic project. Designed and implemented a rule-based inference engine and compiled a knowledge base based on expert data. Fully responsible for executing manual testing on the UI component to ensure accurate instant diagnosis results and system navigation ease.",
-    buttons: [
-      { label: "Read Abstract", url: "#", icon: "book-outline" }
-    ]
-  }
-};
+// 1. Ambil data dari JSON
+fetch("./assets/data/projects.json")
+  .then((response) => response.json())
+  .then((data) => {
+    let htmlContent = "";
 
+    data.forEach((project) => {
+      // Simpan data ke object agar bisa dipanggil oleh Modal
+      projectsData[project.id] = project;
+
+      // Generate HTML Card untuk setiap project
+      htmlContent += `
+        <li class="slider-item">
+          <div class="project-card text-center glass-card">
+            <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763">
+              <img src="${project.image}" width="1000" height="763" loading="lazy" alt="${project.title}" class="img-cover" />
+              <button class="btn btn:hover open-modal-btn" data-project="${project.id}">
+                <span class="span">Project Details</span>
+                <ion-icon name="open-outline" aria-hidden="true"></ion-icon>
+              </button>
+            </div>
+            <div class="card-content">
+              <p class="card-subtitle">${project.category}</p>
+              <h3 class="title h3"><span class="card-title">${project.title}</span></h3>
+            </div>
+          </div>
+        </li>
+      `;
+    });
+
+    // Inject HTML ke dalam slider
+    if (projectSlider) projectSlider.innerHTML = htmlContent;
+
+    // Pasang Event Listener untuk tombol Modal setelah HTML terbuat
+    const openModalBtns = document.querySelectorAll(".open-modal-btn");
+    openModalBtns.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        const projectId = btn.getAttribute("data-project");
+        openProjectModal(projectId);
+      });
+    });
+  })
+  .catch((error) => console.error("Error fetching projects:", error));
+
+
+// 2. Logika Navigasi Slider (Geser Kiri/Kanan)
+const sliderPrev = document.getElementById("sliderPrev");
+const sliderNext = document.getElementById("sliderNext");
+
+if (sliderPrev && sliderNext && projectSlider) {
+  sliderPrev.addEventListener("click", () => {
+    // Geser ke kiri sejauh lebar 1 kartu + gap 30px
+    const scrollAmount = projectSlider.children[0].offsetWidth + 30;
+    projectSlider.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+  });
+
+  sliderNext.addEventListener("click", () => {
+    // Geser ke kanan
+    const scrollAmount = projectSlider.children[0].offsetWidth + 30;
+    projectSlider.scrollBy({ left: scrollAmount, behavior: "smooth" });
+  });
+}
+
+// 3. Logika Modal Pop-up (Sama seperti sebelumnya)
 const projectModal = document.getElementById("projectModal");
 const modalOverlay = document.getElementById("modalOverlay");
 const modalCloseBtn = document.getElementById("modalCloseBtn");
 const modalDynamicBody = document.getElementById("modalDynamicBody");
-const openModalBtns = document.querySelectorAll(".open-modal-btn");
 
 const openProjectModal = (projectId) => {
   const data = projectsData[projectId];
@@ -267,7 +248,7 @@ const openProjectModal = (projectId) => {
   `;
 
   projectModal.classList.add("active");
-  document.body.style.overflow = "hidden";
+  document.body.style.overflow = "hidden"; // Kunci scroll background
 };
 
 const closeProjectModal = () => {
@@ -279,14 +260,6 @@ const closeProjectModal = () => {
     }
   }, 300);
 };
-
-openModalBtns.forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    e.preventDefault();
-    const projectId = btn.getAttribute("data-project");
-    openProjectModal(projectId);
-  });
-});
 
 if (modalCloseBtn) modalCloseBtn.addEventListener("click", closeProjectModal);
 if (modalOverlay) modalOverlay.addEventListener("click", closeProjectModal);

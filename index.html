@@ -1094,146 +1094,28 @@
           </div>
         </section>
 
-        <section class="section project" aria-label="my projects" id="project">
-          <div class="container">
-            <h2
-              class="title h2 section-title text-center"
-              style="margin-bottom: 50px"
-            >
-              My Projects
-            </h2>
+<section class="section project" aria-label="my projects" id="project">
+  <div class="container">
+    <h2 class="title h2 section-title text-center" style="margin-bottom: 50px">
+      My Projects
+    </h2>
 
-<div class="project-grid">
-              
-              <div class="project-card text-center glass-card">
-                <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763">
-                  <img src="./assets/images/projects.jpg" width="1000" height="763" loading="lazy" alt="Learning Management System" class="img-cover" />
-                  <button class="btn btn:hover open-modal-btn" data-project="1">
-                    <span class="span">Project Details</span>
-                    <ion-icon name="open-outline" aria-hidden="true"></ion-icon>
-                  </button>
-                </div>
-                <div class="card-content">
-                  <p class="card-subtitle">QA (Manual & Automation)</p>
-                  <h3 class="title h3"><span class="card-title">Learning Management System (LMS)</span></h3>
-                </div>
-              </div>
+    <ul class="slider-list" id="projectSlider">
+      </ul>
 
-              <div class="project-card text-center glass-card">
-                <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763">
-                  <img src="./assets/images/projects.jpg" width="1000" height="763" loading="lazy" alt="Budget Management System" class="img-cover" />
-                  <button class="btn btn:hover open-modal-btn" data-project="2">
-                    <span class="span">Project Details</span>
-                    <ion-icon name="open-outline" aria-hidden="true"></ion-icon>
-                  </button>
-                </div>
-                <div class="card-content">
-                  <p class="card-subtitle">QA (Manual & Automation)</p>
-                  <h3 class="title h3"><span class="card-title">Budget Management System (BMS)</span></h3>
-                </div>
-              </div>
+    <div class="slider-controls" style="display: flex; justify-content: center; gap: 15px; margin-top: 40px;">
+      <button class="btn btn:hover" id="sliderPrev" style="height: 45px; padding-inline: 20px;">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+        <span class="span">Prev</span>
+      </button>
+      <button class="btn btn:hover" id="sliderNext" style="height: 45px; padding-inline: 20px;">
+        <span class="span">Next</span>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </button>
+    </div>
 
-              <div class="project-card text-center glass-card">
-                <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763">
-                  <img src="./assets/images/projects.jpg" width="1000" height="763" loading="lazy" alt="Financial Order Management" class="img-cover" />
-                  <button class="btn btn:hover open-modal-btn" data-project="3">
-                    <span class="span">Project Details</span>
-                    <ion-icon name="open-outline" aria-hidden="true"></ion-icon>
-                  </button>
-                </div>
-                <div class="card-content">
-                  <p class="card-subtitle">Functional & Integration Testing</p>
-                  <h3 class="title h3"><span class="card-title">Financial Order Management (FOM)</span></h3>
-                </div>
-              </div>
-
-              <div class="project-card text-center glass-card">
-                <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763">
-                  <img src="./assets/images/projects.jpg" width="1000" height="763" loading="lazy" alt="HRIS System" class="img-cover" />
-                  <button class="btn btn:hover open-modal-btn" data-project="4">
-                    <span class="span">Project Details</span>
-                    <ion-icon name="open-outline" aria-hidden="true"></ion-icon>
-                  </button>
-                </div>
-                <div class="card-content">
-                  <p class="card-subtitle">Cross-Platform Manual Testing</p>
-                  <h3 class="title h3"><span class="card-title">HRIS System (Web & Mobile)</span></h3>
-                </div>
-              </div>
-
-              <div class="project-card text-center glass-card">
-                <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763">
-                  <img src="./assets/images/projects.jpg" width="1000" height="763" loading="lazy" alt="Manufacturing Maintenance System" class="img-cover" />
-                  <button class="btn btn:hover open-modal-btn" data-project="5">
-                    <span class="span">Project Details</span>
-                    <ion-icon name="open-outline" aria-hidden="true"></ion-icon>
-                  </button>
-                </div>
-                <div class="card-content">
-                  <p class="card-subtitle">Functional Testing</p>
-                  <h3 class="title h3"><span class="card-title">Manufacturing Maintenance System</span></h3>
-                </div>
-              </div>
-
-              <div class="project-card text-center glass-card">
-                <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763">
-                  <img src="./assets/images/projects.jpg" width="1000" height="763" loading="lazy" alt="Customer Service Chatbot" class="img-cover" />
-                  <button class="btn btn:hover open-modal-btn" data-project="6">
-                    <span class="span">Project Details</span>
-                    <ion-icon name="open-outline" aria-hidden="true"></ion-icon>
-                  </button>
-                </div>
-                <div class="card-content">
-                  <p class="card-subtitle">Development & QA</p>
-                  <h3 class="title h3"><span class="card-title">Customer Service Chatbot Web App</span></h3>
-                </div>
-              </div>
-
-              <div class="project-card text-center glass-card">
-                <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763">
-                  <img src="./assets/images/projects.jpg" width="1000" height="763" loading="lazy" alt="Online Grocery E-Commerce" class="img-cover" />
-                  <button class="btn btn:hover open-modal-btn" data-project="7">
-                    <span class="span">Project Details</span>
-                    <ion-icon name="open-outline" aria-hidden="true"></ion-icon>
-                  </button>
-                </div>
-                <div class="card-content">
-                  <p class="card-subtitle">Functional Manual Testing</p>
-                  <h3 class="title h3"><span class="card-title">Online Grocery E-Commerce</span></h3>
-                </div>
-              </div>
-
-              <div class="project-card text-center glass-card">
-                <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763">
-                  <img src="./assets/images/projects.jpg" width="1000" height="763" loading="lazy" alt="E-Wallet Application" class="img-cover" />
-                  <button class="btn btn:hover open-modal-btn" data-project="8">
-                    <span class="span">Project Details</span>
-                    <ion-icon name="open-outline" aria-hidden="true"></ion-icon>
-                  </button>
-                </div>
-                <div class="card-content">
-                  <p class="card-subtitle">UI/UX Research & Design</p>
-                  <h3 class="title h3"><span class="card-title">E-Wallet App Research & Design</span></h3>
-                </div>
-              </div>
-
-              <div class="project-card text-center glass-card">
-                <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763">
-                  <img src="./assets/images/projects.jpg" width="1000" height="763" loading="lazy" alt="Lovebird Disease Diagnosis" class="img-cover" />
-                  <button class="btn btn:hover open-modal-btn" data-project="9">
-                    <span class="span">Project Details</span>
-                    <ion-icon name="open-outline" aria-hidden="true"></ion-icon>
-                  </button>
-                </div>
-                <div class="card-content">
-                  <p class="card-subtitle">Manual UI Testing</p>
-                  <h3 class="title h3"><span class="card-title">Lovebird Disease Diagnosis Expert System</span></h3>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </section>
+  </div>
+</section>
 
         <div class="project-modal" id="projectModal">
           <div class="modal-overlay" id="modalOverlay"></div>

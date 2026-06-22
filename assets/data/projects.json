@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "title": "Learning Management System (LMS)",
+    "category": "QA (Manual & Automation)",
+    "image": "./assets/images/projects.jpg",
+    "description": "Managed end-to-end testing by designing test cases and building automation scripts using Katalon Studio[cite: 2]. Maintained test cases alongside feature updates, tracked bugs via Google Sheets, and monitored real-time deployment status via Discord integration to accelerate developer collaboration[cite: 2].",
+    "buttons": [
+      { "label": "View Test Cases", "url": "#", "icon": "document-text-outline" }
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Budget Management System (BMS)",
+    "category": "QA (Manual & Automation)",
+    "image": "./assets/images/projects.jpg",
+    "description": "Performed QA and integration testing by optimizing 80% of legacy test cases[cite: 2]. Executed manual and automated testing via Katalon Studio to validate core functionalities and ensure accurate data exchange with the client's Odoo platform[cite: 2].",
+    "buttons": [
+      { "label": "View Scripts", "url": "#", "icon": "code-slash-outline" }
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Financial Order Management (FOM)",
+    "category": "Functional & Integration Testing",
+    "image": "./assets/images/projects.jpg",
+    "description": "Executed functional and integration testing using manual and automated approaches with Katalon Studio[cite: 2]. Validated main transaction flows across modules to ensure accurate, non-redundant data transmission with the client's Odoo platform[cite: 2].",
+    "buttons": [
+      { "label": "Project Details", "url": "#", "icon": "information-circle-outline" }
+    ]
+  },
+  {
+    "id": "4",
+    "title": "Human Resources Information System (HRIS)",
+    "category": "Cross-Platform Manual Testing",
+    "image": "./assets/images/projects.jpg",
+    "description": "Conducted intensive cross-platform testing for an integrated HR ecosystem[cite: 2]. Validated end-to-end business flow synchronization, ensuring mobile application requests like maternity leave and overtime synced perfectly with the web dashboard approval process[cite: 2].",
+    "buttons": [
+      { "label": "Project Details", "url": "#", "icon": "information-circle-outline" }
+    ]
+  },
+  {
+    "id": "5",
+    "title": "Manufacturing Maintenance System (Web)",
+    "category": "Functional Testing",
+    "image": "./assets/images/projects.jpg",
+    "description": "Executed functional testing on a web-based manufacturing application designed for managers and administrators to manage checklists and monitor operations. Validated core features including corrective actions and preventive maintenance scheduling while ensuring alignment with client requirements[cite: 2].",
+    "buttons": [
+      { "label": "Project Details", "url": "#", "icon": "information-circle-outline" }
+    ]
+  },
+  {
+    "id": "6",
+    "title": "Manufacturing Maintenance System (Mobile)",
+    "category": "Functional Testing",
+    "image": "./assets/images/projects.jpg",
+    "description": "Conducted functional testing on a mobile application tailored for on-site maintenance teams and technicians. Ensured the stability and usability of the application for executing machine repairs, updating task checklists, and reporting field issues in real-time[cite: 2].",
+    "buttons": [
+      { "label": "Project Details", "url": "#", "icon": "information-circle-outline" }
+    ]
+  }
+]
