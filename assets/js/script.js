@@ -263,3 +263,52 @@ const closeProjectModal = () => {
 
 if (modalCloseBtn) modalCloseBtn.addEventListener("click", closeProjectModal);
 if (modalOverlay) modalOverlay.addEventListener("click", closeProjectModal);
+
+// ==========================================
+// AUTO-SLIDE LOGIC UNTUK PROJECT SLIDER
+// ==========================================
+
+// Tunggu sebentar agar fetch data selesai dan HTML terbuat
+setTimeout(() => {
+  const projectSlider = document.getElementById("projectSlider");
+
+  if (projectSlider) {
+    const autoSlideDelay = 3000; // Ganti angka ini untuk mengatur kecepatan (3000 = 3 detik)
+    let autoSlideInterval;
+
+    const startAutoSlide = () => {
+      autoSlideInterval = setInterval(() => {
+        // Ambil elemen kartu pertama untuk menghitung jarak geser
+        const firstCard = projectSlider.querySelector(".slider-item");
+        if (!firstCard) return;
+
+        const scrollAmount = firstCard.offsetWidth + 30; // Lebar kartu + gap (30px)
+
+        // Cek apakah slider sudah mentok di ujung kanan
+        // Jika sudah mentok, kembalikan ke awal. Jika belum, geser ke kanan.
+        if (projectSlider.scrollLeft + projectSlider.clientWidth >= projectSlider.scrollWidth - 1) {
+          projectSlider.scrollTo({ left: 0, behavior: "smooth" });
+        } else {
+          projectSlider.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        }
+      }, autoSlideDelay);
+    };
+
+    const stopAutoSlide = () => {
+      clearInterval(autoSlideInterval);
+    };
+
+    // 1. Mulai auto-slide pertama kali
+    startAutoSlide();
+
+    // 2. Hentikan auto-slide saat mouse menyorot kartu (agar tombol details mudah diklik)
+    projectSlider.addEventListener("mouseenter", stopAutoSlide);
+
+    // 3. Jalankan kembali auto-slide saat mouse pergi
+    projectSlider.addEventListener("mouseleave", startAutoSlide);
+    
+    // (Opsional) Untuk pengguna HP/Touchscreen, berhenti saat disentuh
+    projectSlider.addEventListener("touchstart", stopAutoSlide);
+    projectSlider.addEventListener("touchend", startAutoSlide);
+  }
+}, 1000); // Timeout 1 detik memastikan data dari JSON sudah masuk ke HTML

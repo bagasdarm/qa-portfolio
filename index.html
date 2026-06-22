@@ -297,17 +297,9 @@
                       Precision in Testing. Excellence in Delivery.
                     </h2>
 
-                    <p class="section-text">
-                      As an Informatics Engineering graduate and Software
-                      Quality Assurance professional (GPA: 3.65), I specialize
-                      in bridging complex development with seamless user
-                      experiences. I focus on ensuring software reliability
-                      through comprehensive manual and automated testing across
-                      Web and API platforms, turning potential vulnerabilities
-                      into robust digital solutions. Currently active as an SQA
-                      Intern at PT Ragdalion Revolusi Industri under the
-                      MagangHub Kemnaker 2025 Batch II program.
-                    </p>
+<p class="section-text">
+  As an Informatics Engineering graduate and Software Quality Assurance professional (GPA: 3.65), I specialize in bridging complex development with seamless user experiences. I focus on ensuring software reliability through comprehensive manual testing and structural analysis, complemented by automated testing across Web and API platforms. Currently active as an SQA Intern at PT Ragdalion Revolusi Industri under the MagangHub Kemnaker 2025 Batch II program.
+</p>
 
                     <ul class="about-list">
                       <li class="about-item">
@@ -427,55 +419,50 @@
                 <div class="grid-list">
                   <div class="skill-content">
                     <h3 class="h4 title section-title">
-                      Ensuring Quality Through Automation & Precision.
+                      Ensuring Quality Through Analysis & Precision.
                     </h3>
 
                     <p class="section-text">
-                      Proficient in modern testing frameworks and methodologies.
-                      From building robust automation scripts using Katalon
-                      Studio and Playwright, to executing comprehensive API
-                      scenarios in Postman.
+                      Proficient in core software testing methodologies and
+                      defect analysis. Experienced in designing comprehensive
+                      test scenarios, executing manual and API testing,
+                      and utilizing automation tools to support long-term
+                      regression efficiency.
                     </p>
 
-                    <ul class="skill-list">
-                      <li>
-                        <div class="skill-wrapper">
-                          <span class="span">Automation Testing</span>
+<ul class="skill-list">
+        
+        <li>
+          <div class="skill-wrapper">
+            <span class="span">Manual Testing & Bug Reporting</span>
+            <span class="value"></span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 90%"></div>
+          </div>
+        </li>
 
-                          <span class="value"></span>
-                        </div>
+        <li>
+          <div class="skill-wrapper">
+            <span class="span">API Testing</span>
+            <span class="value"></span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 75%"></div>
+          </div>
+        </li>
 
-                        <div class="progress-bar">
-                          <div class="progress-fill" style="width: 75%"></div>
-                        </div>
-                      </li>
+        <li>
+          <div class="skill-wrapper">
+            <span class="span">Automation Testing</span>
+            <span class="value"></span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 70%"></div>
+          </div>
+        </li>
 
-                      <li>
-                        <div class="skill-wrapper">
-                          <span class="span">API Testing</span>
-
-                          <span class="value"></span>
-                        </div>
-
-                        <div class="progress-bar">
-                          <div class="progress-fill" style="width: 70%"></div>
-                        </div>
-                      </li>
-
-                      <li>
-                        <div class="skill-wrapper">
-                          <span class="span"
-                            >Manual Testing & Bug Reporting</span
-                          >
-
-                          <span class="value"></span>
-                        </div>
-
-                        <div class="progress-bar">
-                          <div class="progress-fill" style="width: 90%"></div>
-                        </div>
-                      </li>
-                    </ul>
+      </ul>
                   </div>
 
                   <figure
@@ -915,7 +902,7 @@
 
                         <strong
                           style="
-                            font-size: 1.2rem;
+                            font-size: 1.8rem;
                             color: #ffffff;
                             display: block;
                             margin-bottom: 15px;
@@ -1074,6 +1061,15 @@
                       loading="lazy"
                     />
                   </div>
+
+                  <div class="cert-card" data-tilt>
+                    <img
+                      src="./assets/files/cv3.jpg"
+                      alt="Professional Certificate"
+                      class="cert-img"
+                      loading="lazy"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -1094,15 +1090,37 @@
           </div>
         </section>
 
-<section class="section project" aria-label="my projects" id="project">
-  <div class="container">
-    <h2 class="title h2 section-title text-center" style="margin-bottom: 50px">
-      My Projects
-    </h2>
+        <section class="section project" aria-label="my projects" id="project">
+          <div class="container">
+            <h2
+              class="title h2 section-title text-center"
+              style="margin-bottom: 50px"
+            >
+              My Projects
+            </h2>
 
-    <ul class="slider-list" id="projectSlider">
-      </ul>
+            <!-- Wadah khusus untuk Slider & Tombol -->
+            <div class="slider-wrapper" style="position: relative">
+              <!-- Tombol Prev Kiri -->
+              <button
+                id="sliderPrev"
+                class="floating-btn"
+                aria-label="Previous"
+              >
+                <ion-icon name="chevron-back-outline"></ion-icon>
+              </button>
 
+              <!-- Tempat Card -->
+              <ul class="slider-list" id="projectSlider">
+                <!-- Card project akan di-inject ke sini oleh JavaScript -->
+              </ul>
+
+              <!-- Tombol Next Kanan -->
+              <button id="sliderNext" class="floating-btn" aria-label="Next">
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+              </button>
+            </div>
+            <!-- 
     <div class="slider-controls" style="display: flex; justify-content: center; gap: 15px; margin-top: 40px;">
       <button class="btn btn:hover" id="sliderPrev" style="height: 45px; padding-inline: 20px;">
         <ion-icon name="chevron-back-outline"></ion-icon>
@@ -1112,10 +1130,9 @@
         <span class="span">Next</span>
         <ion-icon name="chevron-forward-outline"></ion-icon>
       </button>
-    </div>
-
-  </div>
-</section>
+    </div> -->
+          </div>
+        </section>
 
         <div class="project-modal" id="projectModal">
           <div class="modal-overlay" id="modalOverlay"></div>

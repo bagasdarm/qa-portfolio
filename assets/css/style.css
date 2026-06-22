@@ -1756,3 +1756,183 @@ textarea.input-field {
     padding: 25px;
   }
 }
+
+/* ==========================================
+   PERBAIKAN UKURAN FONT SECTION EXPERIENCES / RESUME
+   ========================================== */
+
+/* 1. Membesarkan judul posisi (QA Tester Engineer Intern) */
+.timeline-item .h4,
+.timeline-item h4,
+.timeline-item-title {
+    font-size: 20px !important; 
+    font-weight: 600 !important;
+    margin-bottom: 10px !important;
+    line-height: 1.3 !important;
+}
+
+/* 2. Membesarkan teks tanggal, nama perusahaan, dan lokasi */
+.timeline-item span,
+.timeline-item .timeline-item-subtitle {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+    display: block !important;
+    margin-bottom: 5px !important;
+}
+
+/* 3. Membesarkan teks deskripsi (Software QA with hands-on...) */
+.timeline-item p,
+.timeline-item .timeline-text {
+    font-size: 16px !important;
+    line-height: 1.7 !important;
+    margin-top: 15px !important;
+    margin-bottom: 10px !important;
+}
+
+/* 4. Membesarkan teks list/bullet points (Key Responsibilities) */
+.timeline-item ul {
+    margin-top: 10px !important;
+    padding-left: 20px !important;
+}
+
+.timeline-item ul li,
+.timeline-item li {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    margin-bottom: 8px !important;
+    list-style-type: disc !important; /* Memastikan titik bullet terlihat */
+}
+
+/* ==========================================
+   NETFLIX-STYLE FLOATING SLIDER BUTTONS
+   ========================================== */
+
+/* Posisi absolut untuk tombol floating */
+.floating-btn {
+    position: absolute;
+    top: 45%; /* Posisi persis di tengah secara vertikal */
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.6); /* Warna gelap transparan ala Netflix */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Efek saat kursor diarahkan ke tombol */
+.floating-btn:hover {
+    background-color: rgba(0, 0, 0, 0.9); /* Menjadi lebih gelap */
+    transform: translateY(-50%) scale(1.1); /* Tombol sedikit membesar */
+    color: #ffcc00; /* Opsional: Ubah warna panah saat dihover (sesuaikan dengan warna tema web Anda) */
+}
+
+/* Menempelkan tombol di pinggir kiri dan kanan */
+#sliderPrev {
+    left: -25px; /* Agak keluar sedikit ke kiri */
+}
+
+#sliderNext {
+    right: -25px; /* Agak keluar sedikit ke kanan */
+}
+
+/* Opsional: Menyembunyikan scrollbar bawaan browser agar terlihat lebih mulus seperti Netflix */
+.slider-list::-webkit-scrollbar {
+    display: none;
+}
+.slider-list {
+    -ms-overflow-style: none;  /* Untuk IE & Edge */
+    scrollbar-width: none;  /* Untuk Firefox */
+}
+
+/* Responsif: Menyesuaikan ukuran tombol untuk HP */
+@media (max-width: 768px) {
+    .floating-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+    }
+    #sliderPrev { left: -10px; }
+    #sliderNext { right: -10px; }
+}
+
+/* ==========================================
+   PERBAIKAN UKURAN FONT SECTION GET IN TOUCH / CONTACT
+   ========================================== */
+
+/* 1. Membesarkan teks deskripsi sub-judul di bawah tulisan "Get In Touch" */
+#contact .section-text {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+}
+
+/* 2. Membesarkan teks paragraf di kolom kiri ("Whether you have a question...") */
+.contact-info-text {
+    font-size: 16px !important;
+    line-height: 1.7 !important;
+}
+
+/* 3. Membesarkan teks label abu-abu ("EMAIL", "PHONE...", "LOCATION") */
+.contact-item-title {
+    font-size: 14px !important; /* Dibuat sedikit lebih kecil dari isinya agar rapi */
+    letter-spacing: 1px !important;
+    margin-bottom: 6px !important;
+}
+
+/* 4. Membesarkan teks isi alamat email, nomor telepon, dan alamat */
+.contact-item-value {
+    font-size: 17px !important;
+    line-height: 1.5 !important;
+}
+
+/* 5. Membesarkan teks di dalam kolom pengisian Form (Placeholder & Ketikan user) */
+.contact-card-dark .input-field {
+    font-size: 16px !important;
+    padding: 18px 20px !important; /* Menambah sedikit ruang di dalam kotak form agar tidak sempit */
+}
+
+/* ==========================================
+   INTERACTIVE HOVER PREVIEW - CERTIFICATES
+   ========================================== */
+
+/* 1. Memastikan kartu yang sedang di-hover berada di tumpukan paling depan */
+.cert-card {
+    position: relative;
+    z-index: 1;
+}
+
+.cert-card:hover {
+    z-index: 100; /* Maju ke paling depan */
+}
+
+/* 2. Menambahkan transisi halus pada gambar sertifikat */
+.cert-card .cert-img {
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease !important;
+    transform-origin: center; /* Gambar membesar dari titik tengah */
+    position: relative;
+    cursor: zoom-in; /* Mengubah kursor menjadi kaca pembesar */
+}
+
+/* 3. Efek Pop-out (membesar) saat mouse diarahkan ke kartu */
+.cert-card:hover .cert-img {
+    transform: scale(1.8) !important; /* Membesar 1.8x lipat. Ubah angka ini jika kurang/terlalu besar */
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.9) !important; /* Memberikan bayangan tebal agar sangat menonjol */
+    border-radius: 8px !important;
+    background-color: var(--bg-black); /* Mencegah transparan jika gambar memiliki background tembus pandang */
+}
+
+/* 4. Penyesuaian khusus untuk layar HP (Mobile) */
+@media (max-width: 768px) {
+    .cert-card:hover .cert-img {
+        transform: scale(1.15) !important; /* Di HP jangan terlalu besar agar tidak keluar dari layar */
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7) !important;
+    }
+}
