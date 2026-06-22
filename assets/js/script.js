@@ -142,32 +142,37 @@ addEventOnElements(hoveredElements, "mouseout", function () {
     cursors[i].classList.remove("hovered");
   }
 });
-
 /**
  * ==========================================
- * DYNAMIC PROJECTS FROM JSON & SLIDER LOGIC
+ * DYNAMIC PROJECTS FROM JSON, DOTS, ARROWS & AUTO-SLIDE
  * ==========================================
  */
-let projectsData = {}; // Akan menyimpan data untuk modal
+let projectsData = {}; 
 const projectSlider = document.getElementById("projectSlider");
+const sliderDots = document.getElementById("sliderDots");
+const sliderPrev = document.getElementById("sliderPrev");
+const sliderNext = document.getElementById("sliderNext");
 
-// 1. Ambil data dari JSON
+// 1. Fetch Data & Generate HTML (Cards + Dots)
 fetch("./assets/data/projects.json")
   .then((response) => response.json())
   .then((data) => {
     let htmlContent = "";
+    let dotsContent = "";
 
-    data.forEach((project) => {
-      // Simpan data ke object agar bisa dipanggil oleh Modal
+    data.forEach((project, index) => {
       projectsData[project.id] = project;
 
-      // Generate HTML Card untuk setiap project
+      // Card HTML
+// Generate HTML Card untuk setiap project
       htmlContent += `
         <li class="slider-item">
-          <div class="project-card text-center glass-card">
+          <!-- Class open-modal-btn dan data-project dipindah ke elemen div ini -->
+          <div class="project-card text-center glass-card open-modal-btn" data-project="${project.id}">
             <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763">
               <img src="${project.image}" width="1000" height="763" loading="lazy" alt="${project.title}" class="img-cover" />
-              <button class="btn btn:hover open-modal-btn" data-project="${project.id}">
+              <!-- Tombol tetap ada untuk panduan visual, tapi kliknya diurus oleh card -->
+              <button class="btn btn:hover">
                 <span class="span">Project Details</span>
                 <ion-icon name="open-outline" aria-hidden="true"></ion-icon>
               </button>
@@ -179,12 +184,15 @@ fetch("./assets/data/projects.json")
           </div>
         </li>
       `;
+
+      // Dots HTML
+      dotsContent += `<button class="dot ${index === 0 ? 'active' : ''}" data-index="${index}"></button>`;
     });
 
-    // Inject HTML ke dalam slider
     if (projectSlider) projectSlider.innerHTML = htmlContent;
+    if (sliderDots) sliderDots.innerHTML = dotsContent;
 
-    // Pasang Event Listener untuk tombol Modal setelah HTML terbuat
+    // Pasang Event Listener untuk Modal
     const openModalBtns = document.querySelectorAll(".open-modal-btn");
     openModalBtns.forEach((btn) => {
       btn.addEventListener("click", (e) => {
@@ -193,29 +201,113 @@ fetch("./assets/data/projects.json")
         openProjectModal(projectId);
       });
     });
+
+    // --- LOGIKA DOTS ---
+    const dots = document.querySelectorAll(".slider-dots .dot");
+    
+// Fungsi sinkronisasi Dot dengan posisi Scroll (Multiple Active)
+    const updateActiveDot = () => {
+      const firstCard = projectSlider.querySelector(".slider-item");
+      if (!firstCard) return;
+      
+      const cardWidth = firstCard.offsetWidth + 30; // Lebar kartu + gap
+      const containerWidth = projectSlider.clientWidth; // Lebar area pandang slider
+      
+      // 1. Hitung berapa jumlah kartu yang tampil di layar (Misal: PC = 3, HP = 1)
+      const visibleCards = Math.max(1, Math.round(containerWidth / cardWidth));
+      
+      // 2. Hitung kartu urutan ke-berapa yang sedang berada paling kiri
+      let startIndex = Math.round(projectSlider.scrollLeft / cardWidth);
+
+      // 3. Deteksi jika slider sudah mentok di ujung kanan
+      const maxScroll = projectSlider.scrollWidth - projectSlider.clientWidth;
+      if (projectSlider.scrollLeft >= maxScroll - 5) { // Toleransi 5px
+        // Paksa startIndex mundur agar menyorot tepat 3 kartu terakhir (dot 4, 5, 6)
+        startIndex = Math.max(0, dots.length - visibleCards); 
+      }
+
+      // 4. Perbarui tampilan dot
+      dots.forEach((dot, index) => {
+        // Jika index dot berada di dalam rentang kartu yang terlihat, nyalakan dot tersebut
+        if (index >= startIndex && index < startIndex + visibleCards) {
+          dot.classList.add("active");
+        } else {
+          dot.classList.remove("active");
+        }
+      });
+    };
+
+    projectSlider.addEventListener("scroll", updateActiveDot);
+
+    // Klik pada Dot untuk melompat ke project tertentu
+    dots.forEach((dot) => {
+      dot.addEventListener("click", (e) => {
+        const targetIndex = parseInt(e.target.getAttribute("data-index"));
+        const firstCard = projectSlider.querySelector(".slider-item");
+        const cardWidth = firstCard.offsetWidth + 30;
+        projectSlider.scrollTo({ left: targetIndex * cardWidth, behavior: "smooth" });
+      });
+    });
   })
   .catch((error) => console.error("Error fetching projects:", error));
 
 
-// 2. Logika Navigasi Slider (Geser Kiri/Kanan)
-const sliderPrev = document.getElementById("sliderPrev");
-const sliderNext = document.getElementById("sliderNext");
-
+// 2. Logika Navigasi Arrow (Panah Kiri & Kanan)
 if (sliderPrev && sliderNext && projectSlider) {
   sliderPrev.addEventListener("click", () => {
-    // Geser ke kiri sejauh lebar 1 kartu + gap 30px
     const scrollAmount = projectSlider.children[0].offsetWidth + 30;
     projectSlider.scrollBy({ left: -scrollAmount, behavior: "smooth" });
   });
 
   sliderNext.addEventListener("click", () => {
-    // Geser ke kanan
     const scrollAmount = projectSlider.children[0].offsetWidth + 30;
     projectSlider.scrollBy({ left: scrollAmount, behavior: "smooth" });
   });
 }
 
-// 3. Logika Modal Pop-up (Sama seperti sebelumnya)
+// 3. Logika Auto-Slide
+setTimeout(() => {
+  if (projectSlider) {
+    const autoSlideDelay = 3000; // 3 detik
+    let autoSlideInterval;
+
+    const startAutoSlide = () => {
+      autoSlideInterval = setInterval(() => {
+        const firstCard = projectSlider.querySelector(".slider-item");
+        if (!firstCard) return;
+        const scrollAmount = firstCard.offsetWidth + 30;
+
+        // Reset ke awal jika sudah di ujung kanan
+        if (projectSlider.scrollLeft + projectSlider.clientWidth >= projectSlider.scrollWidth - 1) {
+          projectSlider.scrollTo({ left: 0, behavior: "smooth" });
+        } else {
+          projectSlider.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        }
+      }, autoSlideDelay);
+    };
+
+    const stopAutoSlide = () => clearInterval(autoSlideInterval);
+
+    startAutoSlide();
+    projectSlider.addEventListener("mouseenter", stopAutoSlide);
+    projectSlider.addEventListener("mouseleave", startAutoSlide);
+    projectSlider.addEventListener("touchstart", stopAutoSlide);
+    projectSlider.addEventListener("touchend", startAutoSlide);
+    
+    // Opsional: Hentikan auto-slide saat panah di-hover/diklik agar tidak bentrok
+    if(sliderPrev) {
+        sliderPrev.addEventListener("mouseenter", stopAutoSlide);
+        sliderPrev.addEventListener("mouseleave", startAutoSlide);
+    }
+    if(sliderNext) {
+        sliderNext.addEventListener("mouseenter", stopAutoSlide);
+        sliderNext.addEventListener("mouseleave", startAutoSlide);
+    }
+  }
+}, 1000);
+
+
+// 4. Logika Modal Pop-up
 const projectModal = document.getElementById("projectModal");
 const modalOverlay = document.getElementById("modalOverlay");
 const modalCloseBtn = document.getElementById("modalCloseBtn");
@@ -248,7 +340,7 @@ const openProjectModal = (projectId) => {
   `;
 
   projectModal.classList.add("active");
-  document.body.style.overflow = "hidden"; // Kunci scroll background
+  document.body.style.overflow = "hidden";
 };
 
 const closeProjectModal = () => {

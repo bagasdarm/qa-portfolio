@@ -297,9 +297,17 @@
                       Precision in Testing. Excellence in Delivery.
                     </h2>
 
-<p class="section-text">
-  As an Informatics Engineering graduate and Software Quality Assurance professional (GPA: 3.65), I specialize in bridging complex development with seamless user experiences. I focus on ensuring software reliability through comprehensive manual testing and structural analysis, complemented by automated testing across Web and API platforms. Currently active as an SQA Intern at PT Ragdalion Revolusi Industri under the MagangHub Kemnaker 2025 Batch II program.
-</p>
+                    <p class="section-text">
+                      As an Informatics Engineering graduate and Software
+                      Quality Assurance professional (GPA: 3.65), I specialize
+                      in bridging complex development with seamless user
+                      experiences. I focus on ensuring software reliability
+                      through comprehensive manual testing and structural
+                      analysis, complemented by automated testing across Web and
+                      API platforms. Currently active as an SQA Intern at PT
+                      Ragdalion Revolusi Industri under the MagangHub Kemnaker
+                      2025 Batch II program.
+                    </p>
 
                     <ul class="about-list">
                       <li class="about-item">
@@ -425,44 +433,44 @@
                     <p class="section-text">
                       Proficient in core software testing methodologies and
                       defect analysis. Experienced in designing comprehensive
-                      test scenarios, executing manual and API testing,
-                      and utilizing automation tools to support long-term
-                      regression efficiency.
+                      test scenarios, executing manual and API testing, and
+                      utilizing automation tools to support long-term regression
+                      efficiency.
                     </p>
 
-<ul class="skill-list">
-        
-        <li>
-          <div class="skill-wrapper">
-            <span class="span">Manual Testing & Bug Reporting</span>
-            <span class="value"></span>
-          </div>
-          <div class="progress-bar">
-            <div class="progress-fill" style="width: 90%"></div>
-          </div>
-        </li>
+                    <ul class="skill-list">
+                      <li>
+                        <div class="skill-wrapper">
+                          <span class="span"
+                            >Manual Testing & Bug Reporting</span
+                          >
+                          <span class="value"></span>
+                        </div>
+                        <div class="progress-bar">
+                          <div class="progress-fill" style="width: 90%"></div>
+                        </div>
+                      </li>
 
-        <li>
-          <div class="skill-wrapper">
-            <span class="span">API Testing</span>
-            <span class="value"></span>
-          </div>
-          <div class="progress-bar">
-            <div class="progress-fill" style="width: 75%"></div>
-          </div>
-        </li>
+                      <li>
+                        <div class="skill-wrapper">
+                          <span class="span">API Testing</span>
+                          <span class="value"></span>
+                        </div>
+                        <div class="progress-bar">
+                          <div class="progress-fill" style="width: 75%"></div>
+                        </div>
+                      </li>
 
-        <li>
-          <div class="skill-wrapper">
-            <span class="span">Automation Testing</span>
-            <span class="value"></span>
-          </div>
-          <div class="progress-bar">
-            <div class="progress-fill" style="width: 70%"></div>
-          </div>
-        </li>
-
-      </ul>
+                      <li>
+                        <div class="skill-wrapper">
+                          <span class="span">Automation Testing</span>
+                          <span class="value"></span>
+                        </div>
+                        <div class="progress-bar">
+                          <div class="progress-fill" style="width: 70%"></div>
+                        </div>
+                      </li>
+                    </ul>
                   </div>
 
                   <figure
@@ -1115,6 +1123,8 @@
                 <!-- Card project akan di-inject ke sini oleh JavaScript -->
               </ul>
 
+              <div class="slider-dots" id="sliderDots"></div>
+
               <!-- Tombol Next Kanan -->
               <button id="sliderNext" class="floating-btn" aria-label="Next">
                 <ion-icon name="chevron-forward-outline"></ion-icon>
@@ -1156,7 +1166,7 @@
                 grid-template-columns: 1fr 1fr;
                 gap: 40px;
                 margin-top: 40px;
-                align-items: flex-start;
+                align-items: stretch; /* Memaksa kedua kolom memiliki tinggi yang sejajar */
               }
 
               /* Responsif untuk layar HP */
@@ -1175,6 +1185,10 @@
                 border-radius: 16px;
                 padding: 40px;
                 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
               }
 
               /* Styling Form Input Mode Gelap */
@@ -1292,53 +1306,72 @@
                 <ul class="contact-list">
                   <li class="contact-item">
                     <div class="item-icon">
-                      <img
-                        src="./assets/images/contact-icon-3.png"
-                        loading="lazy"
-                        alt="Email Icon"
-                      />
+                      <ion-icon name="mail-outline"></ion-icon>
                     </div>
                     <div>
-                      <span class="contact-item-title">Email</span>
-                      <span class="contact-item-value"
-                        >bagasaridarmawang@gmail.com</span
+                      <h3 class="contact-item-title">EMAIL</h3>
+                      <a
+                        href="mailto:bagasdarm@gmail.com"
+                        class="contact-item-value hover-link"
+                        >bagasdarm@gmail.com</a
                       >
                     </div>
                   </li>
 
                   <li class="contact-item">
                     <div class="item-icon">
-                      <img
-                        src="./assets/images/contact-icon-1.png"
-                        loading="lazy"
-                        alt="Phone Icon"
-                      />
+                      <ion-icon name="call-outline"></ion-icon>
                     </div>
                     <div>
-                      <span class="contact-item-title"
-                        >Phone / Whatsapp Only (Currently Inactive, Email
-                        Only)</span
+                      <h3 class="contact-item-title">PHONE</h3>
+                      <a
+                        href="https://wa.me/6287787394855"
+                        target="_blank"
+                        class="contact-item-value hover-link"
+                        >+62 877 8739 4855</a
                       >
-                      <span class="contact-item-value">+62 *** **** ****</span>
                     </div>
                   </li>
 
                   <li class="contact-item">
                     <div class="item-icon">
-                      <img
-                        src="./assets/images/contact-icon-2.png"
-                        loading="lazy"
-                        alt="Location Icon"
-                      />
+                      <ion-icon name="location-outline"></ion-icon>
                     </div>
                     <div>
-                      <span class="contact-item-title">Location</span>
-                      <address
-                        class="contact-item-value"
-                        style="font-style: normal"
-                      >
-                        Kota Bekasi, Jawa Barat
+                      <h3 class="contact-item-title">LOCATION</h3>
+                      <address class="contact-item-value">
+                        Bekasi City, West Java
                       </address>
+                    </div>
+                  </li>
+
+                  <li class="contact-item">
+                    <div class="item-icon">
+                      <ion-icon name="logo-linkedin"></ion-icon>
+                    </div>
+                    <div>
+                      <h3 class="contact-item-title">LINKEDIN</h3>
+                      <a
+                        href="https://www.linkedin.com/in/bagasdarm/"
+                        target="_blank"
+                        class="contact-item-value hover-link"
+                        >linkedin.com/in/bagasdarm</a
+                      >
+                    </div>
+                  </li>
+
+                  <li class="contact-item">
+                    <div class="item-icon">
+                      <ion-icon name="logo-github"></ion-icon>
+                    </div>
+                    <div>
+                      <h3 class="contact-item-title">GITHUB</h3>
+                      <a
+                        href="https://github.com/bagasdarm"
+                        target="_blank"
+                        class="contact-item-value hover-link"
+                        >github.com/bagasdarm</a
+                      >
                     </div>
                   </li>
                 </ul>
