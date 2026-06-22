@@ -2001,3 +2001,66 @@ textarea.input-field {
     color: #9ca3af;
     line-height: 1.6;
 }
+
+/* ==========================================
+   1. PERBAIKAN SPASI (MARGIN) SECTION SERVICES
+   ========================================== */
+/* Memberikan "nafas" (jarak) atas dan bawah yang lebih lega */
+#service {
+    margin-top: 120px !important; /* Jarak ke Hero Section (Landing Page) diperlebar */
+    margin-bottom: 80px !important; /* Jarak ke Section About di bawahnya */
+}
+
+/* ==========================================
+   2. PERBAIKAN PROJECT CARDS (UKURAN & FONT)
+   ========================================== */
+
+/* A. Membuat semua kartu berukuran seragam (mengikuti yang paling tinggi) */
+.slider-list {
+    align-items: stretch !important; 
+}
+
+.slider-item {
+    height: auto !important; 
+}
+
+.glass-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.glass-card .card-content {
+    flex-grow: 1; /* Memaksa bagian teks untuk mengisi sisa ruang secara proporsional */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* B. Mengubah Font Title Project agar lebih profesional, seragam, dan proporsional */
+.glass-card .title.h3, 
+.glass-card .card-title {
+    font-family: var(--fontFamily-roboto) !important; /* Menggunakan font sans-serif (Roboto) yang lebih formal & profesional */
+    font-size: 19px !important; /* Ukuran diperkecil agar tidak mendominasi card */
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
+    letter-spacing: 0.5px;
+    margin-top: 5px;
+}
+
+/* Sedikit penyesuaian untuk sub-title kategori agar lebih cantik */
+.glass-card .card-subtitle {
+    font-size: 12px !important;
+    color: #60a5fa !important; /* Memberi aksen biru agar lebih kontras */
+    margin-bottom: 8px !important;
+}
+
+/* ==========================================
+   MENGHILANGKAN GARIS PEMISAH DI CONTACT INFO
+   ========================================== */
+
+.contact-item:not(:last-child) {
+    border-block-end: none !important; /* Menghilangkan garis pemisah */
+    padding-block-end: 0 !important;   /* Menghapus sisa padding lama */
+    margin-block-end: 0 !important;    /* Menghapus sisa margin lama agar jarak sejajar */
+}
