@@ -404,3 +404,4 @@ setTimeout(() => {
     projectSlider.addEventListener("touchend", startAutoSlide);
   }
 }, 1000); // Timeout 1 detik memastikan data dari JSON sudah masuk ke HTML
+
